@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(echo $CLAUDE_HOME)",
+      "mcp__mcp-storage__search_items",
+      "Bash(find:*)",
+      "Bash(diff:*)",
+      "Bash(mkdir:*)",
+      "Bash(rmdir:*)",
+      "Bash(cp:*)",
+      "Bash(make:*)",
+      "Bash(../../tools/tinycc/tcc.exe -Wall -O2 -I../../tools/tinycc/include portx.c -o portx.exe)",
+      "Bash(c:/Work/Git/damiansirbu/portx-packages/src/portx/portx.exe version)",
+      "Bash(bash:*)",
+      "Bash(c:/Work/Git/damiansirbu/portx-packages/src/portx/portx.exe list available)",
+      "Bash(rm:*)",
+      "Bash(tools/tinycc/tcc.exe:*)",
+      "Bash(../tools/tinycc/tcc.exe:*)",
+      "Bash(mv:*)",
+      "Bash(true)",
+      "mcp__mcp-storage__store_item",
+      "Bash(../tools/make.exe)",
+      "Bash(../tools/make.exe clean)",
+      "Bash(chmod:*)",
+      "Bash(./setup-lfs-and-push.sh)"
+    ],
+    "deny": []
+  }
+}
