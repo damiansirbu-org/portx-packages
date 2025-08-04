@@ -2,20 +2,20 @@
 # PORTX Package ZIP Creation Script
 # Uses 7za with maximum compression for optimal binary file compression
 
-# Use 7za from build/tools directory
+# Use 7za64 from build/tools directory
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-SEVENZIP="$SCRIPT_DIR/../tools/7za.exe"
+SEVENZIP="$SCRIPT_DIR/../tools/7za64.exe"
 
 echo "🔧 Using 7za: $SEVENZIP"
 
-# Check if 7za exists
+# Check if 7za64 exists
 if [[ ! -f "$SEVENZIP" ]]; then
-    echo "❌ 7za not found at: $SEVENZIP"
+    echo "❌ 7za64 not found at: $SEVENZIP"
     exit 1
 fi
 
-# Look for packages in backup directory (source packages with VERSION.md)
-PACKAGES_SOURCE="/c/Work/Git/damiansirbu/portx_bak_2025_08_03/packages"
+# Look for packages in portx-packages directory (source packages with VERSION.md)
+PACKAGES_SOURCE="$SCRIPT_DIR/../../packages"
 
 if [[ ! -d "$PACKAGES_SOURCE" ]]; then
     echo "❌ Source packages directory not found: $PACKAGES_SOURCE"
@@ -88,7 +88,7 @@ create_package_zip() {
     
     local zip_filename="${package_dir}-${version}-x64-windows.zip"
     
-    # Use 64-bit 7za to create ZIP files with maximum compression
+    # Use 64-bit 7za64 to create ZIP files with maximum compression
     # -tzip: Create ZIP format (not 7z)
     # -mx9: Maximum compression level
     # -mmt: Use multiple threads
@@ -106,7 +106,7 @@ create_package_zip() {
 }
 
 echo "🚀 Starting PORTX package compression..."
-echo "Using 64-bit 7za with maximum ZIP compression"
+echo "Using 64-bit 7za64 with maximum ZIP compression"
 echo
 
 # Get all package directories
